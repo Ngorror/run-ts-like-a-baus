@@ -115,3 +115,19 @@ You don't even need to add `// @ts-ignore` like it was suggested in the link abo
 ```ts
 import { MyVeryNiceTS } from "./this_is_a_real_typescript_file.js";
 ```
+## Memory statistics
+I ran small app with these settings and here are the results:
+
+|%MEM|VSZ|RSS|COMMAND|
+|-:|-:|-:|-|
+|0.8|11765184|284208|node --no-warnings --loader ts-node/esm ./src/index.ts|
+|0.4|11666904|152872|node --no-warnings --loader ts-node/esm/transpile-only ./src/index.ts|
+|0.2|11602440|83032|node build/index.js|
+
+|%MEM|VSZ|RSS|COMMAND|
+|-:|-:|-:|-|
+|0.8|11765696|284976|node --no-warnings --loader ts-node/esm ./src/index.ts|
+|0.3|11632084|117324|node --no-warnings --loader ts-node/esm/transpile-only ./src/index.ts|
+|0.2|11602696|84052|node build/index.js|
+
+I will leave to you to decide do you want to run with `ts-node/esm/transpile-only` on `production` or you prefer to build your code to `js` files
