@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug TypeScript",
+      "program": "${workspaceFolder}/src/index.ts",
+      "request": "launch",
+      "runtimeArgs": ["--loader", "ts-node/esm"],
+      "runtimeExecutable": "/home/user/.nvm/versions/node/v18.11.0/bin/node",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    }
+  ]
+}
