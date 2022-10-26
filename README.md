@@ -1,4 +1,4 @@
-# How to run and debug typescript with node in XXI century
+How to run and debug typescript with node in XXI century
 
 ## The requirements
 
@@ -25,7 +25,11 @@ I just took the latest `ts-node` and `typescript`. I will leave to you to experi
   "main": "index.js",
   "name": "run-ts-like-a-baus",
   "scripts": {
-    "start": "node --no-warnings --watch --loader ts-node/esm ./src/index.ts"
+    "build": "rm -f -R build && tsc -p tsconfig.build.json",  
+    "start": "node --no-warnings --loader ts-node/esm ./src/index.ts",
+    "start:production": "node build/index.js",
+    "start:transpile-only": "node --no-warnings --loader ts-node/esm/transpile-only ./src/index.ts",
+    "watch": "node --no-warnings --watch --loader ts-node/esm ./src/index.ts"
   },
   "type": "module",
   "version": "1.0.0"
