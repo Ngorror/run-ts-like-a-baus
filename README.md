@@ -87,12 +87,7 @@ Here is the right configuration of your `.vscode/launch.json` file
       "name": "Debug TypeScript",
       "program": "${workspaceFolder}/src/index.ts",
       "request": "launch",
-      "runtimeArgs": [
-        "--loader",
-        "ts-node/esm",
-        "-r",
-        "tsconfig-paths/register"
-      ],
+      "runtimeArgs": ["--loader", "ts-node/esm"],
       // if you are fan of nvm you might need to specify the following runtimeExecutable path
       // to get the value on linux, run `which node` in your bash terminal
       "runtimeExecutable": "/home/user/.nvm/versions/node/v18.11.0/bin/node",
